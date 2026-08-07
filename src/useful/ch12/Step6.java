@@ -30,9 +30,8 @@ public class Step6 {
         LocalDateTime nowT = LocalDateTime.of(2025,5,13,2,30);
 
         // 1. 생일이 무슨 요일이었는지 (한글로)
-        String[] days = {"월요일", "화요일", "수요일", "목요일", "금요일", "토요일", "일요일"};
-        DayOfWeek day = birth.getDayOfWeek();
-        String birthday = days[day.getValue() - 1];
+
+        String birthday = birth.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.KOREAN);
 
         //2. 기준 날짜 시점의 만 나이
         int age = Period.between(birth,now).getYears();

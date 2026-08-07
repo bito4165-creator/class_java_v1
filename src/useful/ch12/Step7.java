@@ -1,6 +1,8 @@
 package useful.ch12;
 
+import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 
 public class Step7 {
@@ -9,18 +11,23 @@ public class Step7 {
         // (시작 시간 / 종료 시간)
         long sum = 0;
 
+        LocalTime start1 = LocalTime.now();
         Instant start = Instant.now();
 
         for (int i = 1; i <= 100_000_000; i++) {
             sum += i;
         }
 
+        LocalTime end1 = LocalTime.now();
         Instant end = Instant.now();
 
+        Duration result = Duration.between(start, end);
         long usedMilliTime = ChronoUnit.MILLIS.between(start, end);
 
         System.out.println("합계 : " + sum);
+        System.out.println("걸린시간 : " + result.toMillis() + "ms");
         System.out.println("걸린 시간 : " + usedMilliTime + "ms" );
+
 
     }
 }
