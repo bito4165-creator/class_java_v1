@@ -16,7 +16,7 @@ import java.net.URL;
 public class SimpleHttpClient {
     public static void main(String[] args) {
         String baseURL = "https://jsonplaceholder.typicode.com";
-        String urlString = baseURL + "/todos/2";
+        String urlString = baseURL + "/posts/1";
         // String urlString = "https://www.google.com/webhp?hl=ko&sa=X&ved=0ahUKEwjIps-d4quWAxWZyzQHHTB-Do4QPAgI";
         HttpURLConnection connection = null;
 
