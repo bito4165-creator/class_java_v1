@@ -2,6 +2,7 @@ package http.ch01;
 
 import java.io.*;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 
@@ -31,6 +32,8 @@ public class DeleteHttpClient {
                 System.out.println("삭제 실패");
             }
 
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
